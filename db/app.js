@@ -12,6 +12,8 @@ const {
     updateEmployeeRole
 } = require('./yourCrudFunctions');
 
+const connection = require('./db');
+
 //build the main menu functions
 function mainMenu() {
     inquirer
@@ -82,19 +84,6 @@ function mainMenu() {
 //recall the main menu
 mainMenu();
 
-
-// Create connection to mysql database
-const connection = mysql.createConnection({
-    //go back and look at assignment files to complete these correctly
-    host: '',
-    user: 'root',
-    password: '',
-    database: '',
-});
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected to the database.');
-});
 
 //CREATE THE VARIOUS FUNCTIONS
 
@@ -199,7 +188,6 @@ function addRole() {
             });
         });
 }
-
 
 // Function to add an employee
 function addEmployee() {
