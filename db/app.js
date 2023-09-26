@@ -1,17 +1,4 @@
 const inquirer = require('inquirer');
-const mysql = require('mysql');
-const consoleTable = require('console.table');
-
-const {
-    viewAllDepartments,
-    viewAllRoles,
-    viewAllEmployees,
-    addDepartment,
-    addRole,
-    addEmployee,
-    updateEmployeeRole
-} = require('./yourCrudFunctions');
-
 const connection = require('./db');
 
 //build the main menu functions

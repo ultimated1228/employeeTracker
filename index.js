@@ -1,5 +1,5 @@
-const { mainMenu } = require('./app');
-const connection = require('./db');
+const { mainMenu } = require('./db/app');
+const connection = require('./db/db');
 
 // Start the main menu
 mainMenu();

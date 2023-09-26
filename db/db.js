@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
   password: '',
-  database: '',
+  database: 'employee_dir',/*Need to add the database here once created*/
 });
 
 connection.connect((err) => {
