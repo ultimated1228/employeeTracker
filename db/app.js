@@ -101,7 +101,19 @@ function viewAllRoles() {
 
 // Function to view all employees
 function viewAllEmployees() {
-    const query = 'SELECT * FROM employees';
+    console.log(console.table ? 'Available' : 'Not Available');
+    const query = `SELECT
+    e.id AS employee_id,
+    CONCAT(e.first_name, ' ', e.last_name) AS Employee,
+    r.title AS role,
+    r.salary AS Salary,
+    d.name AS department,
+    CONCAT(m.first_name, ' ', m.last_name) AS Manager
+FROM employees e
+LEFT JOIN roles r ON e.role_id = r.id
+LEFT JOIN departments d ON r.department_id = d.id
+LEFT JOIN employees m ON e.manager_id = m.id;
+`;
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.log('\nAll Employees:\n');
