@@ -7,13 +7,13 @@ USE employee_dir;
 -- Create departments table
 CREATE TABLE IF NOT EXISTS departments (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) NOT NULL
+  name VARCHAR(50) NOT NULL
 );
 
 -- Create roles table
 CREATE TABLE IF NOT EXISTS roles (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30) NOT NULL,
+  title VARCHAR(50) NOT NULL,
   salary INT(7) NOT NULL,
   department_id INT NOT NULL,
   FOREIGN KEY (department_id) REFERENCES departments(id)

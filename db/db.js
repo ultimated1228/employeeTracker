@@ -1,11 +1,11 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 // connect to mysql database
 const connection = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
   password: '',
-  database: 'employee_dir',/*Need to add the database here once created*/
+  database: 'employee_dir',
 });
 
 connection.connect((err) => {
